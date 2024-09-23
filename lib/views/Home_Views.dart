@@ -41,9 +41,9 @@ class _home_viewState extends State<home_view> {
       ),
       body: BlocBuilder<GetWeatherCubit,WeatherState>(
         builder: (context, State) {
-          if(State is WeatherInitialState){
+          if(State is WeatherLoadingState){
             return no_weather_body();
-          }else if(State is WeatherLoadedState ){
+          }else if(State is WeatherSucessState ){
             return Weather_info_body(weatherModel: State.weatherModel,);
           }else{
             return Text('oops there was an error ');
