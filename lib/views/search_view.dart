@@ -26,9 +26,9 @@ class Search_View extends StatelessWidget {
             onSubmitted: (value) async {
               WeatherModel weatherModel = await weatherservice(Dio())
                   .getcurrentweather(cityname: value);
-                  var get_weather_cubit=BlocProvider.of<GetWeatherCubit>(context);
-                  get_weather_cubit.getcurrentWeather(cityname: value);
-                  Navigator.pop(context);
+              var get_weather_cubit = BlocProvider.of<GetWeatherCubit>(context);
+              get_weather_cubit.getcurrentWeather(cityname: value);
+              Navigator.pop(context);
             },
             decoration: const InputDecoration(
                 contentPadding: EdgeInsets.all(25),
